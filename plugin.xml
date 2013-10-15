@@ -1,28 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
     xmlns:android="http://schemas.android.com/apk/res/android"
-    id="com.hypermurea.phonegap.datetimepicker.wp8"
+    id="com.hypermurea.phonegap.datetimepicker"
     version="0.0.1">
 
 	<engines>
 		<engine name="cordova" version=">=3.0.0"/>
 	</engines>
 	
-	<name>Datetimepicker for WP8</name>
+	<name>Datetimepicker (for WP8)</name>
 	
-	<description>Provides date/time picker controls for Phonegap running on WP8</description>
+	<description>Provides date/time picker controls for Phonegap and WP8</description>
 	<author>Jaakko Santala</author>
 	
-	<keywords></keywords>
+	<keywords>datepicker wp8</keywords>
 	<license></license>
-	<asset src="www/datetimepicker.js" target="datetimepicker.js"/>
-	<js-module src="datetimepicker.js" name="datetimepicker">
-		<clobbers target="hypermurea.datetimepicker"/>
+	
+	<js-module src="www/datetimepicker.js" name="datetimepicker">
+		<clobbers target="navigator.datetimepicker"/>
 	</js-module>
 	
-	<platform name="wp8"></platform>
+	<platform name="wp8">
+		<config-file target="config.xml" parent="/*">
+            <feature name="datetimepicker">
+                <param name="wp-package" value="datetimepicker"/>
+            </feature>
+        </config-file>
+		
+		<source-file src="src/DateTimePicker.cs"/>
+		<source-file src="src/DateTimePickerTask.cs"/>		
+	</platform>
 	
-	<source-file src="src/DateTimePicker.cs"/>
-	<source-file src="src/DateTimePickerTask.cs"/>
+
 	
 </plugin>
