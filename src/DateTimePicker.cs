@@ -86,7 +86,7 @@ namespace WPCordovaClassLib.Cordova.Commands
                     string value = WPCordovaClassLib.Cordova.JSON.JsonHelper.Deserialize<string[]>(options)[0];
                     dateTimePickerOptions = new DateTimePickerOptions();
                     if(!String.IsNullOrEmpty(value)) {
-                        dateTimePickerOptions.Value = new DateTime(long.Parse(value));
+                        dateTimePickerOptions.Value = FromUnixTime(long.Parse(value));
                     }
 
                     //this.dateTimePickerOptions = String.IsNullOrEmpty(options["value"]) ? new DateTimePickerOptions() : 
@@ -124,7 +124,7 @@ namespace WPCordovaClassLib.Cordova.Commands
                     string value = WPCordovaClassLib.Cordova.JSON.JsonHelper.Deserialize<string[]>(options)[0];
                     dateTimePickerOptions = new DateTimePickerOptions();
                     if (!String.IsNullOrEmpty(value)) {
-                        dateTimePickerOptions.Value = new DateTime(long.Parse(value));
+                        dateTimePickerOptions.Value = FromUnixTime(long.Parse(value));
                     }
 
                    // this.dateTimePickerOptions = String.IsNullOrEmpty(options) ? new DateTimePickerOptions() :
@@ -149,6 +149,13 @@ namespace WPCordovaClassLib.Cordova.Commands
             }
         }
 
+        private DateTime FromUnixTime(long unixtime) {
+            // Unix timestamp is seconds past epoch
+            System.DateTime dtDateTime = new DateTime(1970, 1, 1, 0, 0, 0, 0);
+            return dtDateTime.AddMilliseconds(unixtime).ToLocalTime();
+        }
+
+
         /// <summary>
         /// Handles datetime picker result
         /// </summary>
@@ -156,7 +163,6 @@ namespace WPCordovaClassLib.Cordova.Commands
         /// <param name="e">stores information about current captured image</param>
         private void dateTimePickerTask_Completed(object sender, DateTimePickerTask.DateTimeResult e)
         {
-
             if (e.Error != null)
             {
                 DispatchCommandResult(new PluginResult(PluginResult.Status.ERROR));
