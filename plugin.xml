@@ -22,8 +22,8 @@
 	
 	<platform name="wp8">
 		<config-file target="config.xml" parent="/*">
-            <feature name="datetimepicker">
-                <param name="wp-package" value="datetimepicker"/>
+            <feature name="DateTimePicker">
+                <param name="wp-package" value="DateTimePicker"/>
             </feature>
         </config-file>
 		

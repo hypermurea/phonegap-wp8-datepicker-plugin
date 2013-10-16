@@ -1,15 +1,7 @@
+
     var exec = require('cordova/exec');
 
     var pickerexport = {};
-
-    /**
-    * Implements DateTime picker to select a date or time. 
-    * Initial value for date or time could be set via 'value' option
-    * 
-    * Usage examples:
-    *   navigator.plugins.dateTimePicker.selectDate(success, error,  {value: new Date()});
-    */
-
 
     /**
     * Open DateTime picker to select a date
