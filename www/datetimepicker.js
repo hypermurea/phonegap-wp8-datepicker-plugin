@@ -1,13 +1,4 @@
-/*
-    {
-        "file": "plugins\\com.hypermurea.datetimepicker\\datetimepicker.js",
-        "id": "com.hypermurea.datetimepicker",
-        "clobbers": [
-            "navigator.DateTimePicker"
-        ]
-    },
-*/
-cordova.define('com.hypermurea.datetimepicker', function (require, exports, module) {
+cordova.define('com.hypermurea.phonegap.datetimepicker', function (require, exports, module) {
 
     var exec = require('cordova/exec');
 
@@ -67,7 +58,7 @@ cordova.define('com.hypermurea.datetimepicker', function (require, exports, modu
 
         exec(function (res) {
 
-         successCallback(new Date(res));
+         successCallback(new Date(parseFloat(res)));
 
         }, errorCallback, "DateTimePicker", "selectTime", options.value);
     };
