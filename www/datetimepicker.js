@@ -1,5 +1,3 @@
-cordova.define('com.hypermurea.phonegap.datetimepicker', function (require, exports, module) {
-
     var exec = require('cordova/exec');
 
     var pickerexport = {};
@@ -66,4 +64,3 @@ cordova.define('com.hypermurea.phonegap.datetimepicker', function (require, expo
 
     module.exports = pickerexport;
 
-});
