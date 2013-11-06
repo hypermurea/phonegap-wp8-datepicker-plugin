@@ -29,7 +29,7 @@
 		
 		<source-file src="src/DateTimePicker.cs"/>
 		<source-file src="src/DateTimePickerTask.cs"/>
-		<source-file src="src/packages.config" target-dir="../"/>
+		<source-file src="src/packages.config" target-dir="../../"/>
 	</platform>
 	
 
