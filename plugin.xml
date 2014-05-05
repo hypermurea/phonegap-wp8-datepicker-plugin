@@ -26,7 +26,6 @@
                 <param name="wp-package" value="DateTimePicker"/>
             </feature>
         </config-file>
-		
 		<source-file src="src/DateTimePicker.cs"/>
 		<source-file src="src/DateTimePickerTask.cs"/>
 		<!--<source-file src="src/packages.config" target-dir="../../"/>-->
